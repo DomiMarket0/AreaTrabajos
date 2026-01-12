@@ -3,77 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Crónica - Jhonarki</title>
+    <title>Crónica Final | Jhonarki</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #1e293b;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Fondo Animado de Gradiente */
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #312e81, #1e1b4b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
-            background: white;
+            width: 90%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
+
         h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
-        .audio-section {
-            background: #ecf0f1;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
-            text-align: center;
+
+        p.subtitle {
+            color: #94a3b8;
+            margin-bottom: 30px;
         }
+
+        .audio-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 18px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .audio-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
         audio {
             width: 100%;
-            margin-top: 10px;
+            filter: invert(1) hue-rotate(180deg) brightness(1.5); /* Hace el reproductor blanco/neon */
         }
-        .content {
-            font-size: 1.1em;
-            text-align: justify;
+
+        .text-content {
+            margin-top: 30px;
+            line-height: 1.8;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            text-align: left;
         }
+
         footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #7f8c8d;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #64748b;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container" data-aos="fade-up">
-        <h1>Título de mi Crónica</h1>
+    <div class="container" data-aos="zoom-in">
+        <h1 data-aos="fade-down" data-aos-delay="200">MI CRÓNICA FINAL</h1>
+        <p class="subtitle" data-aos="fade-up" data-aos-delay="400">Por: Jhonarki - Entrega de Profe Web</p>
         
-        <div class="audio-section">
-            <h3>🎙️ Escucha la narración aquí:</h3>
+        <div class="audio-card" data-aos="flip-up" data-aos-delay="600">
+            <h3 style="margin-top: 0; color: #a855f7;">🎙️ Narración Narrativa</h3>
             <audio controls>
                 <source src="audio.mp3" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
+                Tu navegador no soporta el audio.
             </audio>
         </div>
 
-        <div class="content">
+        <div class="text-content" data-aos="fade-up" data-aos-delay="800">
             <p>
-                Aquí va el texto de tu crónica. Puedes escribir todo lo que necesites 
-                y el diseño se adaptará automáticamente. Recuerda que para que el 
-                audio se escuche, el archivo en tu carpeta debe llamarse exactamente 
-                <strong>audio.mp3</strong>.
+                Este proyecto representa mi trabajo final. El audio que escuchas arriba 
+                contiene la narración detallada de mi crónica, grabada y producida 
+                especialmente para esta clase.
             </p>
         </div>
 
-        <footer>
-            <p>Entrega final - Crónica Jhonarki &copy; 2026</p>
+        <footer data-aos="fade-in" data-aos-delay="1000">
+            DISEÑADO POR DOMIMARKET0 &copy; 2026
         </footer>
     </div>
 
@@ -81,6 +124,7 @@
     <script>
         AOS.init({
             duration: 1000,
+            easing: 'ease-in-out',
             once: true
         });
     </script>
