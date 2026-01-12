@@ -3,58 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crónica Pro | Jhonarki</title>
+    <title>Crónica Deportiva | Jhonarki</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        body {
-            margin: 0; font-family: 'Inter', sans-serif; color: white; min-height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            background: radial-gradient(circle, #1e1b4b, #0f172a);
+        :root { --accent: #a855f7; --bg: #0f172a; }
+        body { margin: 0; font-family: 'Inter', sans-serif; color: #e2e8f0; background-color: var(--bg); line-height: 1.8; }
+        
+        /* Encabezado Impactante */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 1)), 
+                        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
         }
-        .container {
-            width: 90%; max-width: 500px; background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px); padding: 40px; border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+
+        .container { max-width: 800px; margin: -100px auto 50px; padding: 0 20px; }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px);
+            padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
-        .stadium-btn {
-            background: #6366f1; color: white; border: none; padding: 15px 30px;
-            border-radius: 50px; font-weight: bold; cursor: pointer; margin-bottom: 20px;
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+
+        /* Sección de Audio */
+        .audio-box {
+            background: var(--accent); color: white; padding: 20px;
+            border-radius: 15px; margin: 30px 0; display: flex; align-items: center; gap: 20px;
         }
-        .stadium-btn:hover { background: #4f46e5; transform: scale(1.05); }
-        audio { width: 100%; filter: invert(1); margin-top: 10px; }
+        audio { flex-grow: 1; filter: invert(1); }
+
+        /* Estilo del Texto */
+        h1 { font-size: 3rem; margin: 0; color: white; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); border-left: 4px solid var(--accent); padding-left: 15px; margin-top: 40px; }
+        p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 20px; text-align: justify; }
+        .dropcap { float: left; font-size: 4rem; line-height: 1; font-weight: bold; margin-right: 10px; color: var(--accent); }
+
+        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <div class="container" data-aos="zoom-in">
-        <h1 data-aos="fade-down">🏀 CRÓNICA FINAL</h1>
-        <p>Activa el sonido ambiente antes de escuchar</p>
-        
-        <button class="stadium-btn" onclick="playStadium()">🔊 ACTIVAR AMBIENTE DE ESTADIO</button>
-        
-        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 20px;">
-            <audio id="mainAudio" controls>
-                <source src="audio.mp3" type="audio/mpeg">
-            </audio>
+
+    <section class="hero">
+        <h1 data-aos="zoom-out">El Tabloncillo Arde</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Una crónica de pasión y canastas por Jhonarki</p>
+    </section>
+
+    <div class="container">
+        <div class="glass-card" data-aos="fade-up">
+            
+            <div class="audio-box">
+                <span style="font-size: 2rem;">🎙️</span>
+                <div style="flex-grow: 1;">
+                    <small>ESCUCHA LA NARRACIÓN COMPLETA</small>
+                    <audio controls><source src="audio.mp3" type="audio/mpeg"></audio>
+                </div>
+            </div>
+
+            <article>
+                <h2>Capítulo I: El Ambiente</h2>
+                <p><span class="dropcap">E</span>l chirrido de los tenis contra el tabloncillo era el único sonido que competía con los latidos del corazón de los fanáticos. La grada, una marea naranja, rugía ante cada movimiento. No era un juego cualquiera; era la definición de quién manda en la casa.</p>
+
+                <h2>Capítulo II: El Momento Decisivo</h2>
+                <p>El marcador mostraba un empate asfixiante: 88 a 88. El sudor nublaba la vista, pero no el instinto. Fue ahí cuando el número 25 tomó la responsabilidad. Con un paso atrás que pareció congelar el tiempo, elevó el balón en un arco perfecto que terminó en un estruendoso "swish".</p>
+
+                <blockquote>
+                    <p style="font-style: italic; color: var(--accent); text-align: center; font-size: 1.5rem;">
+                        "La victoria es nuestra: 90-88."
+                    </p>
+                </blockquote>
+
+                <h2>Capítulo III: El Final de la Batalla</h2>
+                <p>Al sonar la chicharra, el júbilo explotó. Los muchachos lo dieron todo y el resultado fue un tablazo histórico que dejó a la defensa pidiendo tiempo. Reportó para ustedes, con el corazón en la cancha, Jhonarki García.</p>
+            </article>
+
+            <footer>
+                &copy; 2026 - Proyecto Final de Comunicación Web
+            </footer>
         </div>
-
-        <audio id="stadiumAmbience" loop>
-            <source src="https://www.soundjay.com/misc/sounds/sounds-maracas-1.mp3" type="audio/mpeg">
-        </audio>
-
-        <footer style="margin-top: 20px; font-size: 0.7rem; opacity: 0.5;">Jhonarki - Dominación Web 2026</footer>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-        function playStadium() {
-            var audio = document.getElementById("stadiumAmbience");
-            audio.volume = 0.2; // Sonido suave de fondo
-            audio.play();
-            alert("¡Ambiente de estadio activado! Ahora dale play a tu crónica.");
-        }
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
