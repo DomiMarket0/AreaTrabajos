@@ -3,54 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crónica Final | Jhonarki</title>
+    <title>Crónica Pro | Jhonarki</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #312e81, #1e1b4b);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            margin: 0; font-family: 'Inter', sans-serif; color: white; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            background: radial-gradient(circle, #1e1b4b, #0f172a);
         }
         .container {
-            width: 90%;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
+            width: 90%; max-width: 500px; background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px); padding: 40px; border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
         }
-        h1 { font-size: 2.5rem; background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .audio-card { background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 15px; margin: 20px 0; }
-        audio { width: 100%; filter: invert(1); }
+        .stadium-btn {
+            background: #6366f1; color: white; border: none; padding: 15px 30px;
+            border-radius: 50px; font-weight: bold; cursor: pointer; margin-bottom: 20px;
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+        .stadium-btn:hover { background: #4f46e5; transform: scale(1.05); }
+        audio { width: 100%; filter: invert(1); margin-top: 10px; }
     </style>
 </head>
 <body>
     <div class="container" data-aos="zoom-in">
-        <h1 data-aos="fade-down">MI CRÓNICA FINAL</h1>
-        <p>Por: Jhonarki</p>
-        <div class="audio-card" data-aos="flip-up">
-            <h3 style="color: #a855f7;">🎙️ Escuchar Narración</h3>
-            <audio controls>
+        <h1 data-aos="fade-down">🏀 CRÓNICA FINAL</h1>
+        <p>Activa el sonido ambiente antes de escuchar</p>
+        
+        <button class="stadium-btn" onclick="playStadium()">🔊 ACTIVAR AMBIENTE DE ESTADIO</button>
+        
+        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 20px;">
+            <audio id="mainAudio" controls>
                 <source src="audio.mp3" type="audio/mpeg">
             </audio>
         </div>
-        <footer style="font-size: 0.8rem; color: #64748b;">DISEÑADO POR DOMIMARKET0 &copy; 2026</footer>
+
+        <audio id="stadiumAmbience" loop>
+            <source src="https://www.soundjay.com/misc/sounds/sounds-maracas-1.mp3" type="audio/mpeg">
+        </audio>
+
+        <footer style="margin-top: 20px; font-size: 0.7rem; opacity: 0.5;">Jhonarki - Dominación Web 2026</footer>
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
+    <script>
+        AOS.init();
+        function playStadium() {
+            var audio = document.getElementById("stadiumAmbience");
+            audio.volume = 0.2; // Sonido suave de fondo
+            audio.play();
+            alert("¡Ambiente de estadio activado! Ahora dale play a tu crónica.");
+        }
+    </script>
 </body>
 </html>
