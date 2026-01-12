@@ -3,60 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crónica Final | Jhonarki</title>
+    <title>Crónica Deportiva | Jhonarki García</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        :root { --accent: #818cf8; --bg: #0f172a; }
+        :root { --primary: #818cf8; --accent: #c084fc; --bg: #0f172a; }
         body { margin: 0; font-family: 'Inter', sans-serif; color: #e2e8f0; background: var(--bg); line-height: 1.8; }
+        
+        /* Cabecera */
         .hero {
-            height: 50vh;
+            height: 60vh;
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 1)), 
-                        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80');
+                        url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
         }
-        .container { max-width: 750px; margin: -80px auto 50px; padding: 0 20px; }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(15px);
-            padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1);
+
+        .container { max-width: 800px; margin: -100px auto 50px; padding: 0 20px; }
+        
+        .main-card {
+            background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(20px);
+            padding: 50px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
-        .audio-section {
-            background: #6366f1; padding: 20px; border-radius: 15px; margin: 30px 0;
-            display: flex; align-items: center; gap: 15px;
+
+        /* Sección de Audio */
+        .audio-player {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            padding: 25px; border-radius: 20px; margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
         }
-        audio { flex-grow: 1; filter: invert(1); }
-        h1 { font-size: 2.8rem; color: white; margin: 0; letter-spacing: 2px; }
-        h2 { color: var(--accent); margin-top: 30px; border-left: 4px solid var(--accent); padding-left: 15px; }
-        p { font-size: 1.1rem; text-align: justify; color: #cbd5e1; }
-        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.8rem; }
+        .audio-player h3 { margin-top: 0; color: white; font-size: 1.2rem; }
+        audio { width: 100%; filter: invert(1); }
+
+        /* Texto de la Crónica */
+        .cronica-texto { text-align: justify; font-size: 1.15rem; color: #cbd5e1; }
+        .cronica-texto h2 { color: white; font-size: 2rem; border-bottom: 2px solid var(--primary); display: inline-block; margin-bottom: 20px; }
+        .dropcap { float: left; font-size: 4.5rem; line-height: 1; font-weight: bold; margin-right: 12px; color: var(--primary); }
+        
+        footer { text-align: center; margin-top: 40px; color: #64748b; border-top: 1px solid #1e293b; padding-top: 20px; }
     </style>
 </head>
 <body>
+
     <section class="hero">
-        <h1 data-aos="fade-down">EL TABLONCILLO ARDE</h1>
-        <p data-aos="fade-up">Crónica Narrativa por Jhonarki</p>
+        <h1 data-aos="zoom-out" style="font-size: 3.5rem; color: white; margin: 0;">EL TABLONCILLO NO MIENTE</h1>
+        <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.2rem; letter-spacing: 3px; color: var(--accent);">CRÓNICA DE UNA VICTORIA ÉPICA</p>
     </section>
 
     <div class="container">
-        <div class="glass-card" data-aos="zoom-in">
-            <div class="audio-section">
-                <span style="font-size: 1.5rem;">🎙️</span>
+        <div class="main-card" data-aos="fade-up">
+            
+            <div class="audio-player">
+                <h3>🎙️ Versión Narrada (Podcast)</h3>
                 <audio controls>
                     <source src="audio.mp4" type="audio/mp4">
                     <source src="audio.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el audio.
                 </audio>
             </div>
 
-            <article>
-                <h2>La Tensión del Inicio</h2>
-                <p>El chirrido de los tenis y el murmullo de la grada anunciaban una noche épica. No era un juego más, era la gloria o el olvido en el tabloncillo.</p>
+            <article class="cronica-texto">
+                <h2 data-aos="fade-right">La Noche donde el Tiempo se Detuvo</h2>
                 
-                <h2>El Canastazo Final</h2>
-                <p>Con el reloj en contra y el marcador 88-88, el número 25 tomó el balón. Un paso atrás, un salto al infinito y un "swish" que rompió el silencio. ¡90-88!</p>
+                <p><span class="dropcap">N</span>o era un martes cualquiera en el polideportivo. El aire se sentía pesado, cargado de ese olor a goma quemada y sudor que solo los verdaderos amantes del baloncesto reconocen. Desde el calentamiento, se notaba en la mirada de los jugadores que hoy no se venía a participar, se venía a marcar territorio.</p>
+
+                <p>El primer cuarto fue un intercambio de golpes sin tregua. Cada canasta era respondida con una defensa asfixiante. La grada, dividida pero unida por la pasión, rugía ante cada robo de balón. Pero la verdadera historia se escribió en los últimos dos minutos del último periodo.</p>
+
+                <p style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 5px solid var(--accent); font-style: italic;">
+                    "Con el marcador empatado a 88 y los pulmones pidiendo clemencia, la pelota llegó a las manos del número 25. El resto, como dicen, es historia sagrada del tabloncillo."
+                </p>
+
+                <p>Un paso atrás, un quiebre de cintura que dejó al defensa buscando su equilibrio en el suelo, y un lanzamiento que pareció viajar en cámara lenta. El sonido del balón besando la red —ese "swish" celestial— sentenció el 90-88 definitivo. La explosión de júbilo fue tal, que el suelo vibró bajo nuestros pies.</p>
+
+                <p>Esta no fue solo una victoria en el papel; fue una lección de pundonor. Porque en el baloncesto, como en la vida, el que tiene más hambre es el que termina cenando. Reportó para la clase de Web, <strong>Jhonarki García</strong>.</p>
             </article>
 
-            <footer>ENTREGA FINAL - PROFE WEB &copy; 2026</footer>
+            <footer>
+                PROYECTO FINAL - COMUNICACIÓN SOCIAL &copy; 2026
+            </footer>
         </div>
     </div>
 
